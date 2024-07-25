@@ -13,6 +13,23 @@
 // Copyright © 2024 CreaTECH Solutions. All rights reserved.
 
 import Foundation
+
+struct SpecialDate: Hashable {
+    let name: String
+    let date: Date
+    static var dates: [SpecialDate] {
+        [
+            .init(name: "Tomorrow", date: Date.tomorrow),
+            .init(name: "Yesterday", date: Date.yesterday),
+            .init(name: "Next Month", date: Date.nextMonth),
+            .init(name: "Next New Year", date: Date.startOfNextYear),
+            .init(name: "Last New Year", date: Date.startOfThisYear),
+            
+        ]
+    }
+}
+
+
 extension Date {
     func startOfDay() -> Date {
         Calendar.current.startOfDay(for: self)

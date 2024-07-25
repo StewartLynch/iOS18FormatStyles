@@ -15,20 +15,7 @@
 
 import SwiftUI
 
-struct SpecialDate: Hashable {
-    let name: String
-    let date: Date
-    static var dates: [SpecialDate] {
-        [
-            .init(name: "Tomorrow", date: Date.tomorrow),
-            .init(name: "Yesterday", date: Date.yesterday),
-            .init(name: "Next Month", date: Date.nextMonth),
-            .init(name: "Next New Year", date: Date.startOfNextYear),
-            .init(name: "Last New Year", date: Date.startOfThisYear),
-            
-        ]
-    }
-}
+
 
 struct ReferenceOffsetView: View {
     @State private var referenceDate: SpecialDate = SpecialDate.dates[0]
@@ -56,17 +43,8 @@ struct ReferenceOffsetView: View {
                     }
                 }
                 Section("References from Now") {
-                    //https://developer.apple.com/documentation/swiftui/systemformatstyle/datereference
-                    //https://developer.apple.com/documentation/swiftui/systemformatstyle/datereference/init(to:allowedfields:maxfieldcount:thresholdfield:)
                     LabeledContent {
-                        Text(Date.now,
-                             format:  .reference(
-                                to: referenceDate.date,
-                                allowedFields: [.year, .month, .day, .hour, .minute],
-                                maxFieldCount: 2,
-                                thresholdField: .day
-                             )
-                        )
+                        Text("Reference Here")
                     } label: {
                         Picker("Reference Date", selection: $referenceDate) {
                             ForEach(SpecialDate.dates, id: \.name) { date in
@@ -78,18 +56,8 @@ struct ReferenceOffsetView: View {
 
                 }
                 Section("Offset from now") {
-                    //https://developer.apple.com/documentation/swiftui/systemformatstyle/dateoffset
-                    // https://developer.apple.com/documentation/swiftui/systemformatstyle/dateoffset/init(to:allowedfields:maxfieldcount:sign:)
                     LabeledContent {
-                        Text(
-                            Date.now,
-                            format: .offset(
-                                to: referenceDate.date,
-                                allowedFields: [.year, .month, .week, .day, .hour, .minute, .second],
-                                maxFieldCount: 3,
-                                sign: .automatic
-                            )
-                        )
+                        Text("Offset Here")
                     } label: {
                         Picker("Offset", selection: $referenceDate) {
                             ForEach(SpecialDate.dates, id: \.name) { date in
