@@ -16,18 +16,42 @@
 import SwiftUI
 
 struct TimeDataSourceView: View {
+    let now: TimeDataSource<Date> = .currentDate
     var body: some View {
         NavigationStack {
             Form {
                 Section("Digital Clock") {
-                    
+                    Text(now, format: .dateTime.hour().minute().second())
+                        .font(.largeTitle)
+                        .bold()
+                        .monospacedDigit()
                 }
                 Section("Reference") {
                     // How long until?
+                    let futureDate = Date.now.addingTimeInterval(7)
+                    Text(
+                        now,
+                        format: .reference(
+                            to: futureDate,
+                            allowedFields: [.year, .month, .day, .hour, .minute, .second],
+                            maxFieldCount: 3,
+                            thresholdField: .year
+                        )
+                    )
                     
                 }
                 Section("Offset") {
                     // Time since last mistake
+                    let lastMistake = Date.now.addingTimeInterval(-1000000)
+                    Text(
+                        now,
+                        format: .offset(
+                            to: lastMistake,
+                            allowedFields: [.year, .month, .day, .week],
+                            maxFieldCount: 4,
+                            sign: .automatic
+                        )
+                    )
                     
                 }
             }
