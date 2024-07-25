@@ -27,7 +27,7 @@ struct TimeDataSourceView: View {
                     
                 }
                 Section("Offset") {
-                    // Time since last mistack
+                    // Time since last mistake
                     
                 }
             }
