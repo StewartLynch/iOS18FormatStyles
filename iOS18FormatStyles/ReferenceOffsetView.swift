@@ -15,8 +15,6 @@
 
 import SwiftUI
 
-
-
 struct ReferenceOffsetView: View {
     @State private var referenceDate: SpecialDate = SpecialDate.dates[0]
     var body: some View {

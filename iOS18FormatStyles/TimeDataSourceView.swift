@@ -16,7 +16,6 @@
 import SwiftUI
 
 struct TimeDataSourceView: View {
-    
     var body: some View {
         NavigationStack {
             Form {

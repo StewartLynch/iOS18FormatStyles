@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct TimerStopwatchView: View {
-    
     var body: some View {
-        
         NavigationStack {
             Form {
                 Section("Digital Clock") {
