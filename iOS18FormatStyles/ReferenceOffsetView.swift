@@ -53,7 +53,6 @@ struct ReferenceOffsetView: View {
                         }
                         .labelsHidden()
                     }
-
                 }
                 Section("Offset from now") {
                     LabeledContent {
@@ -69,9 +68,7 @@ struct ReferenceOffsetView: View {
                     
                 }
             }
-            
-            
-                .navigationTitle("Reference/Offset")
+            .navigationTitle("Reference/Offset")
         }
     }
 }
