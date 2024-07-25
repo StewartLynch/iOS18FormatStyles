@@ -42,7 +42,15 @@ struct ReferenceOffsetView: View {
                 }
                 Section("References from Now") {
                     LabeledContent {
-                        Text("Reference Here")
+                        Text(
+                            Date.now,
+                            format: .reference(
+                                to: referenceDate.date,
+                                allowedFields: [.year, .month, .day, .hour, .minute],
+                                maxFieldCount: 2,
+                                thresholdField: .year
+                            )
+                        )
                     } label: {
                         Picker("Reference Date", selection: $referenceDate) {
                             ForEach(SpecialDate.dates, id: \.name) { date in
@@ -54,7 +62,15 @@ struct ReferenceOffsetView: View {
                 }
                 Section("Offset from now") {
                     LabeledContent {
-                        Text("Offset Here")
+                        Text(
+                            Date.now,
+                            format: .offset(
+                                to: referenceDate.date,
+                                allowedFields: [.year, .month, .week, .day, .hour, .minute, .second],
+                                maxFieldCount: 2,
+                                sign: .automatic
+                            )
+                        )
                     } label: {
                         Picker("Offset", selection: $referenceDate) {
                             ForEach(SpecialDate.dates, id: \.name) { date in
