@@ -1,6 +1,6 @@
 # IOS 18 FormatStyles
 
-![mac128](Images/mac128.png) This is the Starter Project for the video on iOS18 FormatStyles
+![mac128](Images/mac128.png) This is the Completed Source Code for the video on iOS18 FormatStyles
 
 
 
