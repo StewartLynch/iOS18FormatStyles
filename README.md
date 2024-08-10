@@ -2,7 +2,7 @@
 
 ![mac128](Images/mac128.png) This is the Completed Source Code for the video on iOS18 FormatStyles
 
-
+Release Date: September 8, 2024
 
 If you want to support my work, you can - </br>
 
