@@ -1,8 +1,9 @@
 # IOS 18 FormatStyles
 
 ![mac128](Images/mac128.png) This is the Completed Source Code for the video on iOS18 FormatStyles
-
-Release Date: September 8, 2024
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=xRQXJPyA9jE
+" target="_blank"><img src="http://img.youtube.com/vi/xRQXJPyA9jE/0.jpg" 
+alt="iOS Format Styles" width="480" height="360" border="1" /></a>
 
 If you want to support my work, you can - </br>
 
